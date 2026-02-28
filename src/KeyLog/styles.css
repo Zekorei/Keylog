@@ -1,0 +1,52 @@
+/* styles.css */
+
+Screen {
+    background: transparent;
+}
+
+TablePanel {
+    height: 1fr;
+    padding: 0 2;
+}
+
+VerticalScroll {
+    height: 1fr;
+}
+
+/*ScrollableContainer {*/
+/*    height: 1fr;*/
+/*}*/
+
+SummaryPanel {
+    height: auto;
+    padding: 0 2;
+}
+
+Rule {
+    margin: 0;
+    padding: 0 2;
+    color: grey;
+}
+
+#kb_panel, #ms_panel {
+    width: 1fr;
+}
+
+#ms_panel {
+    height: auto;
+}
+
+#status_row {
+    height: 2;
+    layout: horizontal;
+    padding: 0 2 1 2;
+}
+
+#top_n_display {
+    width: 1fr;
+}
+
+#debug_message {
+    width: auto;
+    padding-left: 2;
+}
