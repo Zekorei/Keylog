@@ -1,2 +1,0 @@
-[console_scripts]
-keylog = KeyLog.main:main
