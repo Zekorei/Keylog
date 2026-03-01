@@ -5,6 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "KeyLog"
 version = "0.1.0"
+dependencies = [
+  "pynput",
+  "rich",
+  "textual",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

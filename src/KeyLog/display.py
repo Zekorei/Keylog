@@ -132,6 +132,8 @@ class StatsApp(App):
 
     reversed_sort = True
 
+    TITLE = "Keylog"
+
     def __init__(self, stats_ref, lock):
         super().__init__()
         self.stats_ref = stats_ref
