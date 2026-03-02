@@ -1,3 +1,7 @@
+import os
+import platform
+import sys
+
 from pynput import keyboard, mouse
 from threading import Lock
 
@@ -10,7 +14,16 @@ BACKUP_INTERVAL: int = 60*60*4
 
 lock = Lock()
 
-def main():
+def check_linux_display():
+    if platform.system() != "Linux":
+        return
+
+    if os.environ.get("XDG_SESSION_TYPE", "").lower() == "wayland":
+        print("Wayland session detected.")
+        print("Global keyboard capture is not supported under Wayland.")
+        sys.exit(1)
+
+def setup():
     stats = load_stats()
     pressed_keys = set()
 
@@ -27,6 +40,11 @@ def main():
 
     app = StatsApp(stats, lock)
     app.run()
+
+def main():
+    check_linux_display()
+
+    setup()
 
 if __name__ == "__main__":
     main()
